@@ -58,6 +58,7 @@
     <Compile Include="Entities\DirectMessage.cs" />
     <Compile Include="Entities\Status.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Enums\Feature.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\HttpResponseMessageExtensions.cs" />
     <Compile Include="Extensions\JsonDateTimeConverter.cs" />

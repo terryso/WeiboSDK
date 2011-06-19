@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using WeiboSDK.Entities;
+using WeiboSDK.Enums;
 
 #endregion
 
@@ -9,11 +10,34 @@ namespace WeiboSDK.Contracts
 {
     public interface IWeiboClient
     {
+        #region Statuses
+
         /// <summary>
-        ///     获取最新更新的公共微博消息
+        ///     获取最新更新的20条公共微博消息
         /// </summary>
         /// <returns></returns>
         IList<Status> GetPublicWeibos();
+
+        /// <summary>
+        ///     获取最新更新的N条公共微博消息
+        ///     N最大为200
+        /// </summary>
+        /// <param name="count">希望返回的微博条数</param>
+        /// <returns></returns>
+        IList<Status> GetPublicWeibos(int count);
+
+        /// <summary>
+        /// 获取当前登录用户及其所关注用户的最新微博消息
+        /// </summary>
+        /// <param name="count">指定要返回的记录条数，默认值20，最大值200</param>
+        /// <param name="page">指定返回结果的页码，默认值为1</param>
+        /// <param name="sinceId">若指定此参数，则只返回ID比since_id大的微博消息</param>
+        /// <param name="maxId">若指定此参数，则返回ID小于或等于max_id的微博消息</param>
+        /// <param name="feature">微博类型，0全部，1原创，2图片，3视频，4音乐. 返回指定类型的微博信息内容。</param>
+        /// <returns></returns>
+        IList<Status> GetFriendsWeibos(int count, int page, long? sinceId, long? maxId, Feature feature);
+
+        #endregion
 
         /// <summary>
         ///     获取指定用户发布的微博列表

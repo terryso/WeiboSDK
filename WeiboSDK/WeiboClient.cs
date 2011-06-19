@@ -2,11 +2,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Web;
 using SocialKit.LightRest;
 using SocialKit.LightRest.OAuth;
 using WeiboSDK.Contracts;
 using WeiboSDK.Entities;
+using WeiboSDK.Enums;
 using WeiboSDK.Extensions;
 
 #endregion
@@ -45,9 +47,44 @@ namespace WeiboSDK
         /// <returns></returns>
         public IList<Status> GetPublicWeibos()
         {
-            var request = new OAuthHttpRequestMessage("GET", "http://api.t.sina.com.cn/statuses/public_timeline.{0}".FormatWith(_format))
-                                                      .Sign(_accessToken);
+            return GetPublicWeibos(20);
+        }
+
+        /// <summary>
+        ///     获取最新更新的N条公共微博消息
+        ///     N最大为200
+        /// </summary>
+        /// <param name="count">希望返回的微博条数</param>
+        /// <returns></returns>
+        public IList<Status> GetPublicWeibos(int count)
+        {
+            var request = new OAuthHttpRequestMessage("GET", "http://api.t.sina.com.cn/statuses/public_timeline.{0}?count={1}".FormatWith(_format, count))
+                                                     .Sign(_accessToken);
+
             return _client.Send(request).ReadJsonContent<IList<Status>>();
+        }
+
+        /// <summary>
+        /// 获取当前登录用户及其所关注用户的最新微博消息
+        /// </summary>
+        /// <param name="count">指定要返回的记录条数，默认值20，最大值200</param>
+        /// <param name="page">指定返回结果的页码，默认值为1</param>
+        /// <param name="sinceId">若指定此参数，则只返回ID比since_id大的微博消息</param>
+        /// <param name="maxId">若指定此参数，则返回ID小于或等于max_id的微博消息</param>
+        /// <param name="feature">微博类型，0全部，1原创，2图片，3视频，4音乐. 返回指定类型的微博信息内容。</param>
+        /// <returns></returns>
+        public IList<Status> GetFriendsWeibos(int count, int page, long? sinceId, long? maxId, Feature feature)
+        {
+            var url = new StringBuilder("http://api.t.sina.com.cn/statuses/friends_timeline.{0}?count={1}&page={2}&feature={3}".FormatWith(_format, count, page, ((int)feature).ToString()));
+
+            if (sinceId != null)
+                url.AppendFormat("&since_id={0}", sinceId.Value);
+
+            if (maxId != null)
+                url.AppendFormat("&max_id={0}", maxId.Value);
+
+            var reuquest = new OAuthHttpRequestMessage("GET", url.ToString()).Sign(_accessToken);
+            return _client.Send(reuquest).ReadJsonContent<IList<Status>>();
         }
 
         /// <summary>
