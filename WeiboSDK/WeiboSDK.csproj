@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\ISinaApiService.cs" />
     <Compile Include="Contracts\IWeiboClient.cs" />
     <Compile Include="Entities\Comment.cs" />
     <Compile Include="Entities\DirectMessage.cs" />
