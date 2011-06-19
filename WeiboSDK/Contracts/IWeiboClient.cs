@@ -135,12 +135,6 @@ namespace WeiboSDK.Contracts
         Status UploadStatus(string status, string pic);
 
         /// <summary>
-        /// 获取当前登录用户及其所关注用户的最新微博消息
-        /// </summary>
-        /// <returns></returns>
-        IList<Status> GetFriendsTimeline(long sinceId);
-
-        /// <summary>
         /// 根据微博昵称获取好友列表
         /// </summary>
         /// <param name="screenName">微博昵称</param>

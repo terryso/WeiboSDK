@@ -244,18 +244,6 @@ namespace WeiboSDK
         }
 
         /// <summary>
-        /// 获取当前登录用户及其所关注用户的最新微博消息
-        /// </summary>
-        /// <returns></returns>
-        public IList<Status> GetFriendsTimeline(long sinceID)
-        {
-            var request = new OAuthHttpRequestMessage("GET", "http://api.t.sina.com.cn/statuses/friends_timeline.{0}?since_id={1}".FormatWith(_format, sinceID))
-                                                      .Sign(_accessToken);
-
-            return _client.Send(request).ReadJsonContent<IList<Status>>();
-        }
-
-        /// <summary>
         /// 根据微博昵称获取好友列表
         /// </summary>
         /// <param name="screenName">微博昵称</param>
