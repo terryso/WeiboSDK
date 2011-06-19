@@ -40,7 +40,7 @@ namespace WeiboSDK
         #region IWeiboClient Members
 
         /// <summary>
-        ///     获取最新更新的公共微博消息
+        ///    获取最新更新的公共微博消息
         /// </summary>
         /// <returns></returns>
         public IList<Status> GetPublicWeibos()
