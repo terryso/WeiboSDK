@@ -15,6 +15,7 @@ using WeiboSDK.Extensions;
 
 namespace WeiboSDK
 {
+    // Result Format
     public enum ResultFormat
     {
         json = 0,
