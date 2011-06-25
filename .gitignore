@@ -16,4 +16,3 @@ _ReSharper.*
 *.dbproj.user
 *.dbmdl
 error-*.xml
-WeiboSDK.UnitTests/App.config
