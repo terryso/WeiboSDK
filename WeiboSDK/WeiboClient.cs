@@ -21,6 +21,7 @@ namespace WeiboSDK
         xml = 1
     }
 
+    //
     public class WeiboClient : IWeiboClient
     {
         private readonly AccessToken _accessToken;
