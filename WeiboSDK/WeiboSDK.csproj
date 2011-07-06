@@ -52,19 +52,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IUploadRequest.cs" />
     <Compile Include="Contracts\IWeiboClient.cs" />
-    <Compile Include="Entities\Comment.cs" />
-    <Compile Include="Entities\DirectMessage.cs" />
-    <Compile Include="Entities\Status.cs" />
-    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\QQ\QQEdu.cs" />
+    <Compile Include="Contracts\IWeiboRequest.cs" />
+    <Compile Include="Contracts\IWeiboResponse.cs" />
+    <Compile Include="Enums\WeiboType.cs" />
+    <Compile Include="Request\QQ\QQBroadcastTimelineRequest.cs" />
+    <Compile Include="Request\QQ\QQCommentAddRequest.cs" />
+    <Compile Include="Request\QQ\QQRequestBase.cs" />
+    <Compile Include="Request\QQ\QQStatusAddRequest.cs" />
+    <Compile Include="Request\QQ\QQStatusAddWithPicRequest.cs" />
+    <Compile Include="Request\QQ\QQUserInfoRequest.cs" />
+    <Compile Include="Request\Sina\SinaCommentAddRequest.cs" />
+    <Compile Include="Request\Sina\SinaRequestBase.cs" />
+    <Compile Include="Request\Sina\SinaStatusUpdateRequest.cs" />
+    <Compile Include="Request\Sina\SinaStatusUploadRequest.cs" />
+    <Compile Include="Request\Sina\SinaUserShowRequest.cs" />
+    <Compile Include="Request\Sina\SinaUserTimelineRequest.cs" />
+    <Compile Include="Request\Sina\SinaVerifyCredentialsRequest.cs" />
+    <Compile Include="Response\QQ\QQResponse.cs" />
+    <Compile Include="Entities\QQ\QQStatus.cs" />
+    <Compile Include="Response\QQ\QQStatusPostResponse.cs" />
+    <Compile Include="Entities\QQ\QQTag.cs" />
+    <Compile Include="Response\QQ\QQUserResponse.cs" />
+    <Compile Include="Response\QQ\QQStatusesResponse.cs" />
+    <Compile Include="Factories\ConsumerFactory.cs" />
+    <Compile Include="Entities\Sina\SinaComment.cs" />
+    <Compile Include="Entities\Sina\SinaDirectMessage.cs" />
+    <Compile Include="Entities\QQ\QQUser.cs" />
+    <Compile Include="Entities\Sina\SinaStatus.cs" />
+    <Compile Include="Entities\Sina\SinaUser.cs" />
     <Compile Include="Enums\Feature.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\HttpResponseMessageExtensions.cs" />
     <Compile Include="Extensions\JsonDateTimeConverter.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enums\ResultFormat.cs" />
+    <Compile Include="Response\Sina\SinaCommentResponse.cs" />
+    <Compile Include="Response\Sina\SinaResponse.cs" />
+    <Compile Include="Response\Sina\SinaStatusesResponse.cs" />
+    <Compile Include="Response\Sina\SinaStatusResponse.cs" />
+    <Compile Include="Response\Sina\SinaUserResponse.cs" />
+    <Compile Include="WeiboDictionary.cs" />
     <Compile Include="WeiboClient.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

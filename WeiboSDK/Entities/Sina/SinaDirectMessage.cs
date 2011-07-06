@@ -6,13 +6,13 @@ using WeiboSDK.Extensions;
 
 #endregion
 
-namespace WeiboSDK.Entities
+namespace WeiboSDK.Entities.Sina
 {
     /// <summary>
     ///     表示新浪微博私信信息。
     /// </summary>
     [JsonObject("direct_message")]
-    public class DirectMessage
+    public class SinaDirectMessage
     {
         /// <summary>
         ///     获取或设置这条新浪微博私信信息的ID。
@@ -60,13 +60,13 @@ namespace WeiboSDK.Entities
         ///     获取或设置这条新浪微博私信信息的发送人用户信息。
         /// </summary>
         [JsonProperty("sender")]
-        public User Sender { get; set; }
+        public SinaUser Sender { get; set; }
 
         /// <summary>
         ///     获取或设置这条新浪微博私信信息的收信人用户信息。
         /// </summary>
         [JsonProperty("recipient")]
-        public User Recipient { get; set; }
+        public SinaUser Recipient { get; set; }
 
         /// <summary>
         ///     返回这条新浪微博私信信息的内容。

@@ -6,13 +6,13 @@ using WeiboSDK.Extensions;
 
 #endregion
 
-namespace WeiboSDK.Entities
+namespace WeiboSDK.Entities.Sina
 {
     /// <summary>
     ///     表示新浪微博评论信息。
     /// </summary>
     [JsonObject("comment")]
-    public class Comment
+    public class SinaComment
     {
         /// <summary>
         ///     获取或设置这条评论信息的ID。
@@ -54,19 +54,19 @@ namespace WeiboSDK.Entities
         ///     获取或设置这条评论信息的作者用户信息。
         /// </summary>
         [JsonProperty("user")]
-        public User User { get; set; }
+        public SinaUser User { get; set; }
 
         /// <summary>
         ///     获取或设置这条评论信息评论的新浪微博内容。
         /// </summary>
         [JsonProperty("status")]
-        public Status Status { get; set; }
+        public SinaStatus Status { get; set; }
 
         /// <summary>
         ///     获取或设置这条评论信息所回复的评论。
         /// </summary>
         [JsonProperty("comment")]
-        public Comment ReplyComment { get; set; }
+        public SinaComment ReplyComment { get; set; }
 
         /// <summary>
         ///     返回这条评论信息的内容。

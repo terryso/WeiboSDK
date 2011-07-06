@@ -35,6 +35,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -52,7 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.cs" />
+    <Compile Include="JsonConvertTests.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,10 +65,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatusTests.cs" />
-    <Compile Include="TestBase.cs" />
+    <Compile Include="QQ\CommentTests.cs" />
+    <Compile Include="QQ\StatusTests.cs" />
+    <Compile Include="QQ\QQTestBase.cs" />
+    <Compile Include="QQ\UserTests.cs" />
+    <Compile Include="Sina\CommentTests.cs" />
+    <Compile Include="Sina\StatusTests.cs" />
+    <Compile Include="Sina\SinaTestBase.cs" />
+    <Compile Include="Sina\UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\PCRemote.Core\PCRemote.Core.csproj">
+      <Project>{16C31473-3884-41B5-818B-2E2230D4DD42}</Project>
+      <Name>PCRemote.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WeiboSDK\WeiboSDK.csproj">
       <Project>{576ECAD6-DC4E-485B-B5AE-C1B23CDD4C59}</Project>
       <Name>WeiboSDK</Name>

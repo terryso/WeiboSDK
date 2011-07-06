@@ -2,6 +2,7 @@
 
 using System;
 using Newtonsoft.Json;
+using WeiboSDK.Entities.Sina;
 using WeiboSDK.Extensions;
 
 #endregion
@@ -13,7 +14,7 @@ namespace WeiboSDK.Entities
     /// </summary>
     [Serializable]
     [JsonObject("status")]
-    public class Status
+    public class SinaStatus
     {
         /// <summary>
         ///     获取或设置这条新浪微博信息的创建时间。
@@ -91,13 +92,13 @@ namespace WeiboSDK.Entities
         ///     获取或设置这条新浪微博信息的发布者用户信息。
         /// </summary>
         [JsonProperty("user")]
-        public User User { get; set; }
+        public SinaUser User { get; set; }
 
         /// <summary>
         ///     获取或设置这条新浪微博信息转发的新浪微博内容。
         /// </summary>
         [JsonProperty("retweeted_status")]
-        public Status RetweetedStatus { get; set; }
+        public SinaStatus RetweetedStatus { get; set; }
 
         public string ImageLink
         {

@@ -10,14 +10,14 @@ using WeiboSDK.Extensions;
 
 #endregion
 
-namespace WeiboSDK.Entities
+namespace WeiboSDK.Entities.Sina
 {
     /// <summary>
     ///     表示新浪微博用户信息。
     /// </summary>
     [Serializable]
     [JsonObject("user")]
-    public class User
+    public class SinaUser
     {
         private string _city;
         private string _province;

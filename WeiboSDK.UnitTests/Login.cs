@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 using SocialKit.LightRest.OAuth;
+using WeiboSDK.Factories;
 
 namespace WeiboSDK.UnitTests
 {
@@ -12,9 +13,22 @@ namespace WeiboSDK.UnitTests
         public Login()
         {
             InitializeComponent();
+            ddlWeibo.SelectedIndex = 0;
         }
 
-        void btnLogin_Click(object sender, EventArgs e)
+        private void btnGetPin_Click(object sender, EventArgs e)
+        {
+            var weiboType = ddlWeibo.Text;
+            var consumer = ConsumerFactory.GetConsumer(weiboType);
+
+            _requestToken = consumer.GetRequestToken();
+            var authorizeUri = _requestToken.GetNormalizedAuthorizeUri();
+
+            Process.Start(authorizeUri);
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtPin.Text))
             {
@@ -32,14 +46,6 @@ namespace WeiboSDK.UnitTests
                     return;
                 }
             }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            _requestToken = Global.Consumer.GetRequestToken();
-            var authorizeUri = _requestToken.GetNormalizedAuthorizeUri();
-
-            Process.Start(authorizeUri);
         }
     }
 }
