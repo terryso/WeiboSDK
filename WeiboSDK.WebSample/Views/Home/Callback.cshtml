@@ -1,0 +1,16 @@
+﻿@model SocialKit.LightRest.OAuth.AccessToken
+
+@{
+    ViewBag.Title = "Callback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>恭喜，登录成功</h2>
+
+<p>
+    用户的AccessToken是：@Model.Token
+</p>
+<p>
+    用户的AccessTokenSecret是：@Model.Secret
+</p>
+

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>WeiboSDK Demo</h2>
+
+@using(@Html.BeginForm("Login", "Home"))
+	{
+        <ul>
+            <li>微博：
+                <select name="weiboType">
+                    <option value="新浪微博">新浪微博</option>
+                    <option value="腾讯微博">腾讯微博</option>
+                </select>
+            </li>
+            <li><input id="LoginButton" type="submit" value="登录" /></li>
+        </ul>
+	}
+
+
+

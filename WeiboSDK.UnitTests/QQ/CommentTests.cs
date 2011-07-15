@@ -1,8 +1,7 @@
 using System;
 using NUnit.Framework;
-using PCRemote.Core.Utilities;
 using WeiboSDK.Request.QQ;
-using WeiboSDK.Response.QQ;
+using WeiboSDK.Utilities;
 
 namespace WeiboSDK.UnitTests.QQ
 {
@@ -15,8 +14,7 @@ namespace WeiboSDK.UnitTests.QQ
             // Arrange
             var text = "≤‚ ‘∑¢∆¿¬€ " + DateTime.Now.ToLongTimeString();
             var reid = "47032096626287";
-            var request = new QQCommentAddRequest(reid, text);
-            request.ClientIp = IPUtility.GetFirstLocalIP();
+            var request = new QQCommentAddRequest(reid, text) {ClientIp = IPUtility.GetFirstLocalIP()};
 
             // Act
             var response = WeiboClient.Post(request);

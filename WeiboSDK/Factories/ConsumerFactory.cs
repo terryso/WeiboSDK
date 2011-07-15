@@ -22,8 +22,8 @@ namespace WeiboSDK.Factories
                 case "新浪微博":
                     consumer = new Consumer
                     {
-                        Key = "你的新浪微博AppKey",
-                        Secret = "你的新浪微博Secret",
+                        Key = "新浪微博Key",
+                        Secret = "新浪微博Secret",
                         RequestTokenUri = "http://api.t.sina.com.cn/oauth/request_token",
                         AuthorizeUri = "http://api.t.sina.com.cn/oauth/authorize",
                         AccessTokenUri = "http://api.t.sina.com.cn/oauth/access_token"
@@ -32,8 +32,8 @@ namespace WeiboSDK.Factories
                 case "腾讯微博":
                     consumer = new Consumer
                     {
-                        Key = "你的腾讯微博AppKey",
-                        Secret = "你的腾讯微博Secret",
+                        Key = "腾讯微博Key",
+                        Secret = "腾讯微博Secret",
                         RequestTokenUri = "https://open.t.qq.com/cgi-bin/request_token",
                         AuthorizeUri = "https://open.t.qq.com/cgi-bin/authorize",
                         AccessTokenUri = "https://open.t.qq.com/cgi-bin/access_token",

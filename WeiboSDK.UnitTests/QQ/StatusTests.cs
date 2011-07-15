@@ -1,8 +1,7 @@
 using System;
 using NUnit.Framework;
-using PCRemote.Core.Utilities;
 using WeiboSDK.Request.QQ;
-using WeiboSDK.Request.Sina;
+using WeiboSDK.Utilities;
 
 namespace WeiboSDK.UnitTests.QQ
 {
@@ -14,8 +13,7 @@ namespace WeiboSDK.UnitTests.QQ
         {
             // Arrange
             var text = "≤‚ ‘∑¢ÀÕŒ¢≤© " + DateTime.Now.ToLongTimeString();
-            var request = new QQStatusAddRequest(text);
-            request.ClientIp = IPUtility.GetFirstLocalIP();
+            var request = new QQStatusAddRequest(text) {ClientIp = IPUtility.GetFirstLocalIP()};
 
             // Act
             var response = WeiboClient.Post(request);

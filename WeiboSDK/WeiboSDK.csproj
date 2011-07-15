@@ -45,6 +45,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -95,6 +96,7 @@
     <Compile Include="Response\Sina\SinaStatusesResponse.cs" />
     <Compile Include="Response\Sina\SinaStatusResponse.cs" />
     <Compile Include="Response\Sina\SinaUserResponse.cs" />
+    <Compile Include="Utilities\IPUtility.cs" />
     <Compile Include="WeiboDictionary.cs" />
     <Compile Include="WeiboClient.cs" />
   </ItemGroup>
