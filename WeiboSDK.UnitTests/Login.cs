@@ -8,7 +8,7 @@ namespace WeiboSDK.UnitTests
 {
     public partial class Login : Form
     {
-        private RequestToken _requestToken;
+        RequestToken _requestToken;
 
         public Login()
         {
@@ -16,19 +16,18 @@ namespace WeiboSDK.UnitTests
             ddlWeibo.SelectedIndex = 0;
         }
 
-        private void btnGetPin_Click(object sender, EventArgs e)
+        void btnGetPin_Click(object sender, EventArgs e)
         {
-            var weiboType = ddlWeibo.Text;
-            var consumer = ConsumerFactory.GetConsumer(weiboType);
+            string weiboType = ddlWeibo.Text;
+            Consumer consumer = ConsumerFactory.GetConsumer(weiboType);
 
             _requestToken = consumer.GetRequestToken();
-            var authorizeUri = _requestToken.GetNormalizedAuthorizeUri();
+            string authorizeUri = _requestToken.GetNormalizedAuthorizeUri();
 
             Process.Start(authorizeUri);
-
         }
 
-        private void btnLogin_Click_1(object sender, EventArgs e)
+        void btnLogin_Click_1(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtPin.Text))
             {
