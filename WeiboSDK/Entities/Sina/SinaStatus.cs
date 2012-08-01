@@ -91,13 +91,13 @@ namespace WeiboSDK.Entities
         /// <summary>
         ///     获取或设置这条新浪微博信息的发布者用户信息。
         /// </summary>
-        [JsonProperty("user")]
+        //[JsonProperty("user")]
         public SinaUser User { get; set; }
 
         /// <summary>
         ///     获取或设置这条新浪微博信息转发的新浪微博内容。
         /// </summary>
-        [JsonProperty("retweeted_status")]
+        //[JsonProperty("retweeted_status")]
         public SinaStatus RetweetedStatus { get; set; }
 
         public string ImageLink

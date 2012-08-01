@@ -52,5 +52,19 @@ namespace WeiboSDK.UnitTests.Sina
             Assert.IsNotNull(status);
             Assert.AreEqual(text, status.Text);
         }
+
+        [Test]
+        public void Get_Trends_Test()
+        {
+            // Arrage
+            var request = new SinaTrendsRequest {Trend = "Å·ÃÀ½ÖÅÄ"};
+
+            // Act
+            var statuses = WeiboClient.Get(request).Statuses;
+
+            // Assert
+            Assert.IsNotNull(statuses);
+            Assert.IsTrue(statuses.Count > 0);
+        }
     }
 }

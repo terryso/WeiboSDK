@@ -69,6 +69,7 @@
     <Compile Include="Request\Sina\SinaRequestBase.cs" />
     <Compile Include="Request\Sina\SinaStatusUpdateRequest.cs" />
     <Compile Include="Request\Sina\SinaStatusUploadRequest.cs" />
+    <Compile Include="Request\Sina\SinaTrendsRequest.cs" />
     <Compile Include="Request\Sina\SinaUserShowRequest.cs" />
     <Compile Include="Request\Sina\SinaUserTimelineRequest.cs" />
     <Compile Include="Request\Sina\SinaVerifyCredentialsRequest.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Response\Sina\SinaResponse.cs" />
     <Compile Include="Response\Sina\SinaStatusesResponse.cs" />
     <Compile Include="Response\Sina\SinaStatusResponse.cs" />
+    <Compile Include="Response\Sina\SinaTrendsResponse.cs" />
     <Compile Include="Response\Sina\SinaUserResponse.cs" />
     <Compile Include="Utilities\IPUtility.cs" />
     <Compile Include="WeiboDictionary.cs" />
